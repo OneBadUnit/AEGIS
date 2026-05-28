@@ -1,0 +1,92 @@
+[
+  {
+    "name": "CNN",
+    "url": "https://rss.cnn.com/rss/cnn_topstories.rss",
+    "orientation": "left",
+    "reliability_tier": 2
+  },
+  {
+    "name": "New York Times",
+    "url": "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml",
+    "orientation": "left",
+    "reliability_tier": 2
+  },
+  {
+    "name": "Washington Post",
+    "url": "https://feeds.washingtonpost.com/rss/world",
+    "orientation": "left",
+    "reliability_tier": 2
+  },
+  {
+    "name": "The Guardian",
+    "url": "https://www.theguardian.com/world/rss",
+    "orientation": "left",
+    "reliability_tier": 2
+  },
+  {
+    "name": "Politico",
+    "url": "https://www.politico.com/rss/politicopicks.xml",
+    "orientation": "left",
+    "reliability_tier": 2
+  },
+  {
+    "name": "Associated Press",
+    "url": "https://feeds.apnews.com/rss/apf-topnews",
+    "orientation": "center",
+    "reliability_tier": 1
+  },
+  {
+    "name": "BBC News",
+    "url": "https://feeds.bbci.co.uk/news/rss.xml",
+    "orientation": "center",
+    "reliability_tier": 1
+  },
+  {
+    "name": "NPR",
+    "url": "https://feeds.npr.org/1001/rss.xml",
+    "orientation": "center",
+    "reliability_tier": 2
+  },
+  {
+    "name": "The Hill",
+    "url": "https://thehill.com/rss/syndicator/19109",
+    "orientation": "center",
+    "reliability_tier": 2
+  },
+  {
+    "name": "PBS NewsHour",
+    "url": "https://www.pbs.org/newshour/feeds/rss/headlines",
+    "orientation": "center",
+    "reliability_tier": 2
+  },
+  {
+    "name": "Fox News",
+    "url": "https://moxie.foxnews.com/google-publisher/latest.xml",
+    "orientation": "right",
+    "reliability_tier": 2
+  },
+  {
+    "name": "Washington Examiner",
+    "url": "https://www.washingtonexaminer.com/rss/news",
+    "orientation": "right",
+    "reliability_tier": 3
+  },
+  {
+    "name": "National Review",
+    "url": "https://www.nationalreview.com/feed/",
+    "orientation": "right",
+    "reliability_tier": 3
+  },
+  {
+    "name": "Daily Wire",
+    "url": "https://www.dailywire.com/feeds/rss.xml",
+    "orientation": "right",
+    "reliability_tier": 3
+  },
+  {
+    "name": "The Free Press",
+    "url": "https://www.thefp.com/feed",
+    "orientation": "right",
+    "reliability_tier": 3
+  }
+]

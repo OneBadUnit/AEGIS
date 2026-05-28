@@ -1,0 +1,17 @@
+Set WshShell = CreateObject("WScript.Shell")
+Set FSO = CreateObject("Scripting.FileSystemObject")
+
+ProjectPath = FSO.GetParentFolderName(WScript.ScriptFullName)
+FrontendPath = ProjectPath & "\frontend"
+
+BackendCommand = "cmd /c cd /d """ & ProjectPath & """ && python main.py > backend.log 2>&1"
+FrontendCommand = "cmd /c cd /d """ & FrontendPath & """ && npm run dev"
+BrowserCommand = "http://127.0.0.1:5173"
+
+WshShell.Run BackendCommand, 0, False
+WScript.Sleep 2500
+
+WshShell.Run FrontendCommand, 0, False
+WScript.Sleep 3500
+
+WshShell.Run BrowserCommand, 1, False

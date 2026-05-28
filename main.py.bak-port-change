@@ -1,0 +1,17 @@
+# ==========================================
+# SWAT SIGNAL DESK
+# File: main.py
+# Phase: 1A (Rename + Reframe)
+# Version: 002
+# ==========================================
+import uvicorn
+
+from backend.app.app import app  # noqa: F401  (registers routes)
+
+if __name__ == "__main__":
+    uvicorn.run(
+        "backend.app.app:app",
+        host="127.0.0.1",
+        port=8000,
+        reload=False,
+    )

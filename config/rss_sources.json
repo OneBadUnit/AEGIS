@@ -1,0 +1,512 @@
+[
+  {
+    "name": "AP Top News",
+    "url": "https://feeds.apnews.com/rss/apf-topnews",
+    "category": "general",
+    "source_type": "wire",
+    "source_role": "baseline",
+    "source_orientation": "center",
+    "editorial_role": "facts",
+    "reliability_tier": 1
+  },
+  {
+    "name": "BBC World News",
+    "url": "https://feeds.bbci.co.uk/news/rss.xml",
+    "category": "general",
+    "source_type": "broadcast",
+    "source_role": "baseline",
+    "source_orientation": "center",
+    "editorial_role": "mixed",
+    "reliability_tier": 1
+  },
+  {
+    "name": "NPR News",
+    "url": "https://feeds.npr.org/1001/rss.xml",
+    "category": "general",
+    "source_type": "broadcast",
+    "source_role": "baseline",
+    "source_orientation": "center",
+    "editorial_role": "mixed",
+    "reliability_tier": 2
+  },
+  {
+    "name": "The Guardian World",
+    "url": "https://www.theguardian.com/world/rss",
+    "category": "general",
+    "source_type": "digital",
+    "source_role": "baseline",
+    "source_orientation": "left",
+    "editorial_role": "mixed",
+    "reliability_tier": 2
+  },
+  {
+    "name": "The Hill",
+    "url": "https://thehill.com/rss/syndicator/19109",
+    "category": "general",
+    "source_type": "digital",
+    "source_role": "independent",
+    "source_orientation": "center",
+    "editorial_role": "mixed",
+    "reliability_tier": 2
+  },
+  {
+    "name": "Axios",
+    "url": "https://api.axios.com/feed/",
+    "category": "general",
+    "source_type": "digital",
+    "source_role": "independent",
+    "source_orientation": "left",
+    "editorial_role": "mixed",
+    "reliability_tier": 2
+  },
+  {
+    "name": "Reason",
+    "url": "https://reason.com/feed/",
+    "category": "general",
+    "source_type": "digital",
+    "source_role": "independent",
+    "source_orientation": "right",
+    "editorial_role": "analysis",
+    "reliability_tier": 3
+  },
+  {
+    "name": "AP Politics",
+    "url": "https://feeds.apnews.com/rss/apf-politics",
+    "category": "politics",
+    "source_type": "wire",
+    "source_role": "baseline",
+    "source_orientation": "center",
+    "editorial_role": "facts",
+    "reliability_tier": 1
+  },
+  {
+    "name": "NPR Politics",
+    "url": "https://feeds.npr.org/1014/rss.xml",
+    "category": "politics",
+    "source_type": "broadcast",
+    "source_role": "baseline",
+    "source_orientation": "center",
+    "editorial_role": "mixed",
+    "reliability_tier": 2
+  },
+  {
+    "name": "BBC Politics",
+    "url": "https://feeds.bbci.co.uk/news/politics/rss.xml",
+    "category": "politics",
+    "source_type": "broadcast",
+    "source_role": "baseline",
+    "source_orientation": "center",
+    "editorial_role": "mixed",
+    "reliability_tier": 1
+  },
+  {
+    "name": "AP Business",
+    "url": "https://feeds.apnews.com/rss/apf-business",
+    "category": "economy",
+    "source_type": "wire",
+    "source_role": "baseline",
+    "source_orientation": "center",
+    "editorial_role": "facts",
+    "reliability_tier": 1
+  },
+  {
+    "name": "NPR Economy",
+    "url": "https://feeds.npr.org/1006/rss.xml",
+    "category": "economy",
+    "source_type": "broadcast",
+    "source_role": "baseline",
+    "source_orientation": "center",
+    "editorial_role": "mixed",
+    "reliability_tier": 2
+  },
+  {
+    "name": "BBC Business",
+    "url": "https://feeds.bbci.co.uk/news/business/rss.xml",
+    "category": "economy",
+    "source_type": "broadcast",
+    "source_role": "baseline",
+    "source_orientation": "center",
+    "editorial_role": "mixed",
+    "reliability_tier": 1
+  },
+  {
+    "name": "Ars Technica",
+    "url": "https://feeds.arstechnica.com/arstechnica/index",
+    "category": "technology",
+    "source_type": "trade",
+    "source_role": "independent",
+    "source_orientation": "center",
+    "editorial_role": "analysis",
+    "reliability_tier": 2
+  },
+  {
+    "name": "The Verge",
+    "url": "https://www.theverge.com/rss/index.xml",
+    "category": "technology",
+    "source_type": "digital",
+    "source_role": "independent",
+    "source_orientation": "left",
+    "editorial_role": "mixed",
+    "reliability_tier": 2
+  },
+  {
+    "name": "TechCrunch",
+    "url": "https://techcrunch.com/feed/",
+    "category": "technology",
+    "source_type": "trade",
+    "source_role": "independent",
+    "source_orientation": "center",
+    "editorial_role": "mixed",
+    "reliability_tier": 2
+  },
+  {
+    "name": "Wired",
+    "url": "https://www.wired.com/feed/rss",
+    "category": "technology",
+    "source_type": "digital",
+    "source_role": "independent",
+    "source_orientation": "left",
+    "editorial_role": "analysis",
+    "reliability_tier": 2
+  },
+  {
+    "name": "BBC Technology",
+    "url": "https://feeds.bbci.co.uk/news/technology/rss.xml",
+    "category": "technology",
+    "source_type": "broadcast",
+    "source_role": "baseline",
+    "source_orientation": "center",
+    "editorial_role": "mixed",
+    "reliability_tier": 1
+  },
+  {
+    "name": "AP Technology",
+    "url": "https://feeds.apnews.com/rss/apf-technology",
+    "category": "technology",
+    "source_type": "wire",
+    "source_role": "baseline",
+    "source_orientation": "center",
+    "editorial_role": "facts",
+    "reliability_tier": 1
+  },
+  {
+    "name": "AP Science",
+    "url": "https://feeds.apnews.com/rss/apf-science",
+    "category": "science",
+    "source_type": "wire",
+    "source_role": "baseline",
+    "source_orientation": "center",
+    "editorial_role": "facts",
+    "reliability_tier": 1
+  },
+  {
+    "name": "BBC Science",
+    "url": "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml",
+    "category": "science",
+    "source_type": "broadcast",
+    "source_role": "baseline",
+    "source_orientation": "center",
+    "editorial_role": "mixed",
+    "reliability_tier": 1
+  },
+  {
+    "name": "NPR Science",
+    "url": "https://feeds.npr.org/1007/rss.xml",
+    "category": "science",
+    "source_type": "broadcast",
+    "source_role": "baseline",
+    "source_orientation": "center",
+    "editorial_role": "mixed",
+    "reliability_tier": 2
+  },
+  {
+    "name": "ScienceDaily",
+    "url": "https://www.sciencedaily.com/rss/all.xml",
+    "category": "science",
+    "source_type": "trade",
+    "source_role": "independent",
+    "source_orientation": "center",
+    "editorial_role": "mixed",
+    "reliability_tier": 2
+  },
+  {
+    "name": "AP Sports",
+    "url": "https://feeds.apnews.com/rss/apf-sports",
+    "category": "sports",
+    "source_type": "wire",
+    "source_role": "baseline",
+    "source_orientation": "center",
+    "editorial_role": "facts",
+    "reliability_tier": 1
+  },
+  {
+    "name": "BBC Sport",
+    "url": "https://feeds.bbci.co.uk/sport/rss.xml",
+    "category": "sports",
+    "source_type": "broadcast",
+    "source_role": "baseline",
+    "source_orientation": "center",
+    "editorial_role": "mixed",
+    "reliability_tier": 1
+  },
+  {
+    "name": "r/worldnews",
+    "url": "https://www.reddit.com/r/worldnews/hot.rss",
+    "category": "public_signal",
+    "source_type": "community",
+    "source_role": "public",
+    "source_orientation": "watchlist",
+    "editorial_role": "narrative",
+    "reliability_tier": 4
+  },
+  {
+    "name": "r/news",
+    "url": "https://www.reddit.com/r/news/hot.rss",
+    "category": "public_signal",
+    "source_type": "community",
+    "source_role": "public",
+    "source_orientation": "watchlist",
+    "editorial_role": "narrative",
+    "reliability_tier": 4
+  },
+  {
+    "name": "r/politics",
+    "url": "https://www.reddit.com/r/politics/hot.rss",
+    "category": "public_signal",
+    "source_type": "community",
+    "source_role": "public",
+    "source_orientation": "watchlist",
+    "editorial_role": "narrative",
+    "reliability_tier": 4
+  },
+  {
+    "name": "Al Jazeera English",
+    "url": "https://www.aljazeera.com/xml/rss/all.xml",
+    "category": "geopolitical",
+    "source_type": "broadcast",
+    "source_role": "geopolitical",
+    "source_orientation": "center",
+    "editorial_role": "mixed",
+    "reliability_tier": 2
+  },
+  {
+    "name": "Middle East Eye",
+    "url": "https://www.middleeasteye.net/rss.xml",
+    "category": "geopolitical",
+    "source_type": "digital",
+    "source_role": "geopolitical",
+    "source_orientation": "left",
+    "editorial_role": "mixed",
+    "reliability_tier": 3
+  },
+  {
+    "name": "Times of Israel",
+    "url": "https://www.timesofisrael.com/feed/",
+    "category": "geopolitical",
+    "source_type": "digital",
+    "source_role": "independent",
+    "source_orientation": "right",
+    "editorial_role": "mixed",
+    "reliability_tier": 2
+  },
+  {
+    "name": "Foreign Policy",
+    "url": "https://foreignpolicy.com/feed/",
+    "category": "geopolitical",
+    "source_type": "digital",
+    "source_role": "geopolitical",
+    "source_orientation": "center",
+    "editorial_role": "analysis",
+    "reliability_tier": 2
+  },
+  {
+    "name": "War on the Rocks",
+    "url": "https://warontherocks.com/feed/",
+    "category": "geopolitical",
+    "source_type": "digital",
+    "source_role": "geopolitical",
+    "source_orientation": "center",
+    "editorial_role": "analysis",
+    "reliability_tier": 2
+  },
+  {
+    "name": "Breaking Defense",
+    "url": "https://breakingdefense.com/feed/",
+    "category": "geopolitical",
+    "source_type": "trade",
+    "source_role": "geopolitical",
+    "source_orientation": "center",
+    "editorial_role": "mixed",
+    "reliability_tier": 2
+  },
+  {
+    "name": "EFF Deep Links",
+    "url": "https://www.eff.org/rss/updates.xml",
+    "category": "censorship",
+    "source_type": "nonprofit",
+    "source_role": "censorship_watch",
+    "source_orientation": "left",
+    "editorial_role": "analysis",
+    "reliability_tier": 2
+  },
+  {
+    "name": "FIRE (Free Speech)",
+    "url": "https://www.thefire.org/feed/",
+    "category": "censorship",
+    "source_type": "nonprofit",
+    "source_role": "censorship_watch",
+    "source_orientation": "right",
+    "editorial_role": "analysis",
+    "reliability_tier": 2
+  },
+  {
+    "name": "Reclaim the Net",
+    "url": "https://reclaimthenet.org/feed/",
+    "category": "censorship",
+    "source_type": "digital",
+    "source_role": "censorship_watch",
+    "source_orientation": "right",
+    "editorial_role": "mixed",
+    "reliability_tier": 3
+  },
+  {
+    "name": "Techdirt",
+    "url": "https://www.techdirt.com/feed/",
+    "category": "censorship",
+    "source_type": "digital",
+    "source_role": "censorship_watch",
+    "source_orientation": "center",
+    "editorial_role": "analysis",
+    "reliability_tier": 2
+  },
+  {
+    "name": "MIT Technology Review",
+    "url": "https://www.technologyreview.com/feed/",
+    "category": "ai_watch",
+    "source_type": "trade",
+    "source_role": "ai_watch",
+    "source_orientation": "center",
+    "editorial_role": "analysis",
+    "reliability_tier": 2
+  },
+  {
+    "name": "Bellingcat",
+    "url": "https://www.bellingcat.com/feed/",
+    "category": "ai_watch",
+    "source_type": "digital",
+    "source_role": "ai_watch",
+    "source_orientation": "center",
+    "editorial_role": "analysis",
+    "reliability_tier": 2
+  },
+  {
+    "name": "Poynter",
+    "url": "https://www.poynter.org/feed/",
+    "category": "ai_watch",
+    "source_type": "digital",
+    "source_role": "ai_watch",
+    "source_orientation": "center",
+    "editorial_role": "analysis",
+    "reliability_tier": 2
+  },
+  {
+    "name": "The Intercept",
+    "url": "https://theintercept.com/feed/?rss",
+    "category": "investigative",
+    "source_type": "digital",
+    "source_role": "independent",
+    "source_orientation": "left",
+    "editorial_role": "analysis",
+    "reliability_tier": 3
+  },
+  {
+    "name": "ProPublica",
+    "url": "https://www.propublica.org/feeds/propublica/main",
+    "category": "investigative",
+    "source_type": "nonprofit",
+    "source_role": "independent",
+    "source_orientation": "left",
+    "editorial_role": "analysis",
+    "reliability_tier": 2
+  },
+  {
+    "name": "CREW (Ethics Watchdog)",
+    "url": "https://www.citizensforethics.org/feed/",
+    "category": "investigative",
+    "source_type": "nonprofit",
+    "source_role": "independent",
+    "source_orientation": "left",
+    "editorial_role": "analysis",
+    "reliability_tier": 2
+  },
+  {
+    "name": "Ohio Capital Journal",
+    "url": "https://ohiocapitaljournal.com/feed/",
+    "category": "local",
+    "source_type": "digital",
+    "source_role": "independent",
+    "source_orientation": "center",
+    "editorial_role": "mixed",
+    "reliability_tier": 2
+  },
+  {
+    "name": "WCPO Cincinnati",
+    "url": "https://www.wcpo.com/rss",
+    "category": "local",
+    "source_type": "broadcast",
+    "source_role": "independent",
+    "source_orientation": "center",
+    "editorial_role": "mixed",
+    "reliability_tier": 2
+  },
+  {
+    "name": "Columbus Dispatch",
+    "url": "https://www.dispatch.com/rss",
+    "category": "local",
+    "source_type": "digital",
+    "source_role": "independent",
+    "source_orientation": "center",
+    "editorial_role": "mixed",
+    "reliability_tier": 2
+  },
+  {
+    "name": "Louisville Courier-Journal",
+    "url": "https://www.courier-journal.com/rss/",
+    "category": "local",
+    "source_type": "digital",
+    "source_role": "independent",
+    "source_orientation": "center",
+    "editorial_role": "mixed",
+    "reliability_tier": 2
+  },
+  {
+    "name": "r/geopolitics",
+    "url": "https://www.reddit.com/r/geopolitics/hot.rss",
+    "category": "public_signal",
+    "source_type": "community",
+    "source_role": "public",
+    "source_orientation": "watchlist",
+    "editorial_role": "narrative",
+    "reliability_tier": 4
+  },
+  {
+    "name": "r/IsraelPalestine",
+    "url": "https://www.reddit.com/r/IsraelPalestine/hot.rss",
+    "category": "public_signal",
+    "source_type": "community",
+    "source_role": "public",
+    "source_orientation": "watchlist",
+    "editorial_role": "narrative",
+    "reliability_tier": 4
+  },
+  {
+    "name": "r/iran",
+    "url": "https://www.reddit.com/r/iran/hot.rss",
+    "category": "public_signal",
+    "source_type": "community",
+    "source_role": "public",
+    "source_orientation": "watchlist",
+    "editorial_role": "narrative",
+    "reliability_tier": 4
+  }
+]

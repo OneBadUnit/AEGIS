@@ -1,0 +1,615 @@
+Folder PATH listing for volume New Volume
+Volume serial number is 162B-A1FC
+D:.
+|   backend.log
+|   collector_runner.py
+|   Kill_Python.bat
+|   Launch Market Radar.vbs
+|   Launch Market Radar.vbs.bak-port-change
+|   main.py
+|   main.py.bak-port-change
+|   market_radar.db
+|   models.py
+|   requirements.txt
+|   Stop Market Radar.bat
+|   Stop Market Radar.bat.bak-port-change
+|   tree.txt
+|   __init__.py
+|   
++---ai
+|   |   analyzer.py
+|   |   __init__.py
+|   |   
+|   \---__pycache__
+|           analyzer.cpython-311.pyc
+|           __init__.cpython-311.pyc
+|           
++---backend
+|   |   __init__.py
+|   |   
+|   +---app
+|   |   |   app.py
+|   |   |   app.py.bak-port-change
+|   |   |   __init__.py
+|   |   |   
+|   |   +---api
+|   |   |   \---routes
+|   |   |       |   radar.py
+|   |   |       |   
+|   |   |       \---__pycache__
+|   |   |               radar.cpython-311.pyc
+|   |   |               
+|   |   +---core
+|   |   |   |   pipeline.py
+|   |   |   |   
+|   |   |   \---__pycache__
+|   |   |           pipeline.cpython-311.pyc
+|   |   |           
+|   |   +---db
+|   |   |   |   database.py
+|   |   |   |   
+|   |   |   \---__pycache__
+|   |   |           database.cpython-311.pyc
+|   |   |           
+|   |   \---__pycache__
+|   |           app.cpython-311.pyc
+|   |           __init__.cpython-311.pyc
+|   |           
+|   \---__pycache__
+|           __init__.cpython-311.pyc
+|           
++---config
+|       rss_sources.json
+|       
++---frontend
+|   |   index.html
+|   |   package-lock.json
+|   |   package.json
+|   |   package.json.bak-port-change
+|   |   vite.config.js
+|   |   vite.config.js.bak-port-change
+|   |   
+|   +---node_modules
+|   |   |   .package-lock.json
+|   |   |   
+|   |   +---.bin
+|   |   |       nanoid
+|   |   |       nanoid.cmd
+|   |   |       nanoid.ps1
+|   |   |       rolldown
+|   |   |       rolldown.cmd
+|   |   |       rolldown.ps1
+|   |   |       vite
+|   |   |       vite.cmd
+|   |   |       vite.ps1
+|   |   |       
+|   |   +---.vite
+|   |   |   \---deps
+|   |   |           package.json
+|   |   |           react-dom.js
+|   |   |           react-dom.js.map
+|   |   |           react-dom_client.js
+|   |   |           react-dom_client.js.map
+|   |   |           react-DW0Z4HR0.js
+|   |   |           react-DW0Z4HR0.js.map
+|   |   |           react.js
+|   |   |           react_jsx-dev-runtime.js
+|   |   |           react_jsx-dev-runtime.js.map
+|   |   |           react_jsx-runtime.js
+|   |   |           react_jsx-runtime.js.map
+|   |   |           _metadata.json
+|   |   |           
+|   |   +---.vite-temp
+|   |   +---@oxc-project
+|   |   |   \---types
+|   |   |           LICENSE
+|   |   |           package.json
+|   |   |           README.md
+|   |   |           types.d.ts
+|   |   |           
+|   |   +---@rolldown
+|   |   |   +---binding-win32-x64-msvc
+|   |   |   |       package.json
+|   |   |   |       README.md
+|   |   |   |       rolldown-binding.win32-x64-msvc.node
+|   |   |   |       
+|   |   |   \---pluginutils
+|   |   |       |   LICENSE
+|   |   |       |   package.json
+|   |   |       |   README.md
+|   |   |       |   
+|   |   |       \---dist
+|   |   |           |   index.d.ts
+|   |   |           |   index.js
+|   |   |           |   utils.d.ts
+|   |   |           |   utils.js
+|   |   |           |   
+|   |   |           \---filter
+|   |   |                   composable-filters.d.ts
+|   |   |                   composable-filters.js
+|   |   |                   filter-vite-plugins.d.ts
+|   |   |                   filter-vite-plugins.js
+|   |   |                   index.d.ts
+|   |   |                   index.js
+|   |   |                   simple-filters.d.ts
+|   |   |                   simple-filters.js
+|   |   |                   
+|   |   +---@vitejs
+|   |   |   \---plugin-react
+|   |   |       |   LICENSE
+|   |   |       |   package.json
+|   |   |       |   README.md
+|   |   |       |   
+|   |   |       +---dist
+|   |   |       |       index.d.ts
+|   |   |       |       index.js
+|   |   |       |       refresh-runtime.js
+|   |   |       |       
+|   |   |       \---types
+|   |   |               optionalTypes.d.ts
+|   |   |               preamble.d.ts
+|   |   |               
+|   |   +---detect-libc
+|   |   |   |   index.d.ts
+|   |   |   |   LICENSE
+|   |   |   |   package.json
+|   |   |   |   README.md
+|   |   |   |   
+|   |   |   \---lib
+|   |   |           detect-libc.js
+|   |   |           elf.js
+|   |   |           filesystem.js
+|   |   |           process.js
+|   |   |           
+|   |   +---fdir
+|   |   |   |   LICENSE
+|   |   |   |   package.json
+|   |   |   |   README.md
+|   |   |   |   
+|   |   |   \---dist
+|   |   |           index.cjs
+|   |   |           index.d.cts
+|   |   |           index.d.mts
+|   |   |           index.mjs
+|   |   |           
+|   |   +---lightningcss
+|   |   |   |   LICENSE
+|   |   |   |   package.json
+|   |   |   |   README.md
+|   |   |   |   
+|   |   |   \---node
+|   |   |           ast.d.ts
+|   |   |           ast.js.flow
+|   |   |           browserslistToTargets.js
+|   |   |           composeVisitors.js
+|   |   |           flags.js
+|   |   |           index.d.ts
+|   |   |           index.js
+|   |   |           index.js.flow
+|   |   |           index.mjs
+|   |   |           targets.d.ts
+|   |   |           targets.js.flow
+|   |   |           
+|   |   +---lightningcss-win32-x64-msvc
+|   |   |       LICENSE
+|   |   |       lightningcss.win32-x64-msvc.node
+|   |   |       package.json
+|   |   |       README.md
+|   |   |       
+|   |   +---nanoid
+|   |   |   |   index.browser.cjs
+|   |   |   |   index.browser.js
+|   |   |   |   index.cjs
+|   |   |   |   index.d.cts
+|   |   |   |   index.d.ts
+|   |   |   |   index.js
+|   |   |   |   LICENSE
+|   |   |   |   nanoid.js
+|   |   |   |   package.json
+|   |   |   |   README.md
+|   |   |   |   
+|   |   |   +---async
+|   |   |   |       index.browser.cjs
+|   |   |   |       index.browser.js
+|   |   |   |       index.cjs
+|   |   |   |       index.d.ts
+|   |   |   |       index.js
+|   |   |   |       index.native.js
+|   |   |   |       package.json
+|   |   |   |       
+|   |   |   +---bin
+|   |   |   |       nanoid.cjs
+|   |   |   |       
+|   |   |   +---non-secure
+|   |   |   |       index.cjs
+|   |   |   |       index.d.ts
+|   |   |   |       index.js
+|   |   |   |       package.json
+|   |   |   |       
+|   |   |   \---url-alphabet
+|   |   |           index.cjs
+|   |   |           index.js
+|   |   |           package.json
+|   |   |           
+|   |   +---picocolors
+|   |   |       LICENSE
+|   |   |       package.json
+|   |   |       picocolors.browser.js
+|   |   |       picocolors.d.ts
+|   |   |       picocolors.js
+|   |   |       README.md
+|   |   |       types.d.ts
+|   |   |       
+|   |   +---picomatch
+|   |   |   |   index.js
+|   |   |   |   LICENSE
+|   |   |   |   package.json
+|   |   |   |   posix.js
+|   |   |   |   README.md
+|   |   |   |   
+|   |   |   \---lib
+|   |   |           constants.js
+|   |   |           parse.js
+|   |   |           picomatch.js
+|   |   |           scan.js
+|   |   |           utils.js
+|   |   |           
+|   |   +---postcss
+|   |   |   |   LICENSE
+|   |   |   |   package.json
+|   |   |   |   README.md
+|   |   |   |   
+|   |   |   \---lib
+|   |   |           at-rule.d.ts
+|   |   |           at-rule.js
+|   |   |           comment.d.ts
+|   |   |           comment.js
+|   |   |           container.d.ts
+|   |   |           container.js
+|   |   |           css-syntax-error.d.ts
+|   |   |           css-syntax-error.js
+|   |   |           declaration.d.ts
+|   |   |           declaration.js
+|   |   |           document.d.ts
+|   |   |           document.js
+|   |   |           fromJSON.d.ts
+|   |   |           fromJSON.js
+|   |   |           input.d.ts
+|   |   |           input.js
+|   |   |           lazy-result.d.ts
+|   |   |           lazy-result.js
+|   |   |           list.d.ts
+|   |   |           list.js
+|   |   |           map-generator.js
+|   |   |           no-work-result.d.ts
+|   |   |           no-work-result.js
+|   |   |           node.d.ts
+|   |   |           node.js
+|   |   |           parse.d.ts
+|   |   |           parse.js
+|   |   |           parser.js
+|   |   |           postcss.d.mts
+|   |   |           postcss.d.ts
+|   |   |           postcss.js
+|   |   |           postcss.mjs
+|   |   |           previous-map.d.ts
+|   |   |           previous-map.js
+|   |   |           processor.d.ts
+|   |   |           processor.js
+|   |   |           result.d.ts
+|   |   |           result.js
+|   |   |           root.d.ts
+|   |   |           root.js
+|   |   |           rule.d.ts
+|   |   |           rule.js
+|   |   |           stringifier.d.ts
+|   |   |           stringifier.js
+|   |   |           stringify.d.ts
+|   |   |           stringify.js
+|   |   |           symbols.js
+|   |   |           terminal-highlight.js
+|   |   |           tokenize.js
+|   |   |           warn-once.js
+|   |   |           warning.d.ts
+|   |   |           warning.js
+|   |   |           
+|   |   +---react
+|   |   |   |   compiler-runtime.js
+|   |   |   |   index.js
+|   |   |   |   jsx-dev-runtime.js
+|   |   |   |   jsx-dev-runtime.react-server.js
+|   |   |   |   jsx-runtime.js
+|   |   |   |   jsx-runtime.react-server.js
+|   |   |   |   LICENSE
+|   |   |   |   package.json
+|   |   |   |   react.react-server.js
+|   |   |   |   README.md
+|   |   |   |   
+|   |   |   \---cjs
+|   |   |           react-compiler-runtime.development.js
+|   |   |           react-compiler-runtime.production.js
+|   |   |           react-compiler-runtime.profiling.js
+|   |   |           react-jsx-dev-runtime.development.js
+|   |   |           react-jsx-dev-runtime.production.js
+|   |   |           react-jsx-dev-runtime.profiling.js
+|   |   |           react-jsx-dev-runtime.react-server.development.js
+|   |   |           react-jsx-dev-runtime.react-server.production.js
+|   |   |           react-jsx-runtime.development.js
+|   |   |           react-jsx-runtime.production.js
+|   |   |           react-jsx-runtime.profiling.js
+|   |   |           react-jsx-runtime.react-server.development.js
+|   |   |           react-jsx-runtime.react-server.production.js
+|   |   |           react.development.js
+|   |   |           react.production.js
+|   |   |           react.react-server.development.js
+|   |   |           react.react-server.production.js
+|   |   |           
+|   |   +---react-dom
+|   |   |   |   client.js
+|   |   |   |   client.react-server.js
+|   |   |   |   index.js
+|   |   |   |   LICENSE
+|   |   |   |   package.json
+|   |   |   |   profiling.js
+|   |   |   |   profiling.react-server.js
+|   |   |   |   react-dom.react-server.js
+|   |   |   |   README.md
+|   |   |   |   server.browser.js
+|   |   |   |   server.bun.js
+|   |   |   |   server.edge.js
+|   |   |   |   server.js
+|   |   |   |   server.node.js
+|   |   |   |   server.react-server.js
+|   |   |   |   static.browser.js
+|   |   |   |   static.edge.js
+|   |   |   |   static.js
+|   |   |   |   static.node.js
+|   |   |   |   static.react-server.js
+|   |   |   |   test-utils.js
+|   |   |   |   
+|   |   |   \---cjs
+|   |   |           react-dom-client.development.js
+|   |   |           react-dom-client.production.js
+|   |   |           react-dom-profiling.development.js
+|   |   |           react-dom-profiling.profiling.js
+|   |   |           react-dom-server-legacy.browser.development.js
+|   |   |           react-dom-server-legacy.browser.production.js
+|   |   |           react-dom-server-legacy.node.development.js
+|   |   |           react-dom-server-legacy.node.production.js
+|   |   |           react-dom-server.browser.development.js
+|   |   |           react-dom-server.browser.production.js
+|   |   |           react-dom-server.bun.development.js
+|   |   |           react-dom-server.bun.production.js
+|   |   |           react-dom-server.edge.development.js
+|   |   |           react-dom-server.edge.production.js
+|   |   |           react-dom-server.node.development.js
+|   |   |           react-dom-server.node.production.js
+|   |   |           react-dom-test-utils.development.js
+|   |   |           react-dom-test-utils.production.js
+|   |   |           react-dom.development.js
+|   |   |           react-dom.production.js
+|   |   |           react-dom.react-server.development.js
+|   |   |           react-dom.react-server.production.js
+|   |   |           
+|   |   +---rolldown
+|   |   |   |   LICENSE
+|   |   |   |   package.json
+|   |   |   |   README.md
+|   |   |   |   
+|   |   |   +---bin
+|   |   |   |       cli.mjs
+|   |   |   |       
+|   |   |   +---dist
+|   |   |   |   |   cli.d.mts
+|   |   |   |   |   cli.mjs
+|   |   |   |   |   config.d.mts
+|   |   |   |   |   config.mjs
+|   |   |   |   |   experimental-index.d.mts
+|   |   |   |   |   experimental-index.mjs
+|   |   |   |   |   experimental-runtime-types.d.ts
+|   |   |   |   |   filter-index.d.mts
+|   |   |   |   |   filter-index.mjs
+|   |   |   |   |   get-log-filter.d.mts
+|   |   |   |   |   get-log-filter.mjs
+|   |   |   |   |   index.d.mts
+|   |   |   |   |   index.mjs
+|   |   |   |   |   parallel-plugin-worker.d.mts
+|   |   |   |   |   parallel-plugin-worker.mjs
+|   |   |   |   |   parallel-plugin.d.mts
+|   |   |   |   |   parallel-plugin.mjs
+|   |   |   |   |   parse-ast-index.d.mts
+|   |   |   |   |   parse-ast-index.mjs
+|   |   |   |   |   plugins-index.d.mts
+|   |   |   |   |   plugins-index.mjs
+|   |   |   |   |   utils-index.d.mts
+|   |   |   |   |   utils-index.mjs
+|   |   |   |   |   
+|   |   |   |   \---shared
+|   |   |   |           binding-BeU_1iEk.mjs
+|   |   |   |           binding-zH1vcmbM.d.mts
+|   |   |   |           bindingify-input-options-DbbBhzky.mjs
+|   |   |   |           constructors-C2EWPKW3.mjs
+|   |   |   |           constructors-D0W3rNfA.d.mts
+|   |   |   |           define-config-5HJ1b9vG.d.mts
+|   |   |   |           define-config-DJOr6Iwt.mjs
+|   |   |   |           error-DL-e8-oE.mjs
+|   |   |   |           get-log-filter-semyr3Lj.d.mts
+|   |   |   |           load-config-BoVO31Un.mjs
+|   |   |   |           logging-C6h4g8dA.d.mts
+|   |   |   |           logs-D80CXhvg.mjs
+|   |   |   |           misc-DJYbNKZX.mjs
+|   |   |   |           normalize-string-or-regex-CbQQ69gT.mjs
+|   |   |   |           parse-B_ZnWxLZ.mjs
+|   |   |   |           prompt-U5ajztzG.mjs
+|   |   |   |           resolve-tsconfig-CfYpGzid.mjs
+|   |   |   |           rolldown-build-DSxL8qiP.mjs
+|   |   |   |           rolldown-D3JZ9rMt.mjs
+|   |   |   |           transform-DgZ3paSD.d.mts
+|   |   |   |           watch-Bd8v9ewv.mjs
+|   |   |   |           
+|   |   |   \---node_modules
+|   |   |       \---@rolldown
+|   |   |           \---pluginutils
+|   |   |               |   LICENSE
+|   |   |               |   package.json
+|   |   |               |   README.md
+|   |   |               |   
+|   |   |               \---dist
+|   |   |                   |   index.d.ts
+|   |   |                   |   index.js
+|   |   |                   |   utils.d.ts
+|   |   |                   |   utils.js
+|   |   |                   |   
+|   |   |                   \---filter
+|   |   |                           composable-filters.d.ts
+|   |   |                           composable-filters.js
+|   |   |                           filter-vite-plugins.d.ts
+|   |   |                           filter-vite-plugins.js
+|   |   |                           index.d.ts
+|   |   |                           index.js
+|   |   |                           simple-filters.d.ts
+|   |   |                           simple-filters.js
+|   |   |                           
+|   |   +---scheduler
+|   |   |   |   index.js
+|   |   |   |   index.native.js
+|   |   |   |   LICENSE
+|   |   |   |   package.json
+|   |   |   |   README.md
+|   |   |   |   unstable_mock.js
+|   |   |   |   unstable_post_task.js
+|   |   |   |   
+|   |   |   \---cjs
+|   |   |           scheduler-unstable_mock.development.js
+|   |   |           scheduler-unstable_mock.production.js
+|   |   |           scheduler-unstable_post_task.development.js
+|   |   |           scheduler-unstable_post_task.production.js
+|   |   |           scheduler.development.js
+|   |   |           scheduler.native.development.js
+|   |   |           scheduler.native.production.js
+|   |   |           scheduler.production.js
+|   |   |           
+|   |   +---source-map-js
+|   |   |   |   LICENSE
+|   |   |   |   package.json
+|   |   |   |   README.md
+|   |   |   |   source-map.d.ts
+|   |   |   |   source-map.js
+|   |   |   |   
+|   |   |   \---lib
+|   |   |           array-set.js
+|   |   |           base64-vlq.js
+|   |   |           base64.js
+|   |   |           binary-search.js
+|   |   |           mapping-list.js
+|   |   |           quick-sort.js
+|   |   |           source-map-consumer.d.ts
+|   |   |           source-map-consumer.js
+|   |   |           source-map-generator.d.ts
+|   |   |           source-map-generator.js
+|   |   |           source-node.d.ts
+|   |   |           source-node.js
+|   |   |           util.js
+|   |   |           
+|   |   +---tinyglobby
+|   |   |   |   LICENSE
+|   |   |   |   package.json
+|   |   |   |   README.md
+|   |   |   |   
+|   |   |   \---dist
+|   |   |           index.cjs
+|   |   |           index.d.cts
+|   |   |           index.d.mts
+|   |   |           index.mjs
+|   |   |           
+|   |   \---vite
+|   |       |   client.d.ts
+|   |       |   LICENSE.md
+|   |       |   package.json
+|   |       |   README.md
+|   |       |   
+|   |       +---bin
+|   |       |       openChrome.js
+|   |       |       vite.js
+|   |       |       
+|   |       +---dist
+|   |       |   +---client
+|   |       |   |       client.mjs
+|   |       |   |       env.mjs
+|   |       |   |       
+|   |       |   \---node
+|   |       |       |   cli.js
+|   |       |       |   index.d.ts
+|   |       |       |   index.js
+|   |       |       |   internal.d.ts
+|   |       |       |   internal.js
+|   |       |       |   module-runner.d.ts
+|   |       |       |   module-runner.js
+|   |       |       |   
+|   |       |       \---chunks
+|   |       |               build.js
+|   |       |               chunk.js
+|   |       |               dist.js
+|   |       |               lib.js
+|   |       |               logger.js
+|   |       |               moduleRunnerTransport.d.ts
+|   |       |               node.js
+|   |       |               postcss-import.js
+|   |       |               
+|   |       +---misc
+|   |       |       false.js
+|   |       |       true.js
+|   |       |       
+|   |       \---types
+|   |           |   customEvent.d.ts
+|   |           |   hmrPayload.d.ts
+|   |           |   hot.d.ts
+|   |           |   import-meta.d.ts
+|   |           |   importGlob.d.ts
+|   |           |   importMeta.d.ts
+|   |           |   metadata.d.ts
+|   |           |   
+|   |           \---internal
+|   |                   cssPreprocessorOptions.d.ts
+|   |                   esbuildOptions.d.ts
+|   |                   lightningcssOptions.d.ts
+|   |                   rollupTypeCompat.d.ts
+|   |                   terserOptions.d.ts
+|   |                   
+|   \---src
+|       |   App.jsx
+|       |   main.jsx
+|       |   styles.css
+|       |   
+|       +---components
+|       |       OpportunityCard.jsx
+|       |       OpportunityDetail.jsx
+|       |       OpportunityFeed.jsx
+|       |       SignalCard.jsx
+|       |       
+|       +---lib
+|       |       api.js
+|       |       api.js.bak-port-change
+|       |       
+|       \---pages
+|               RadarDashboard.jsx
+|               
++---sources
+|   |   base.py
+|   |   rss.py
+|   |   __init__.py
+|   |   
+|   \---__pycache__
+|           base.cpython-311.pyc
+|           rss.cpython-311.pyc
+|           __init__.cpython-311.pyc
+|           
++---tasks
+|   |   run_collectors.py
+|   |   
+|   \---__pycache__
+|           run_collectors.cpython-311.pyc
+|           
+\---__pycache__
+        models.cpython-311.pyc
+        
