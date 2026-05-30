@@ -671,7 +671,7 @@ The Front Page Consensus engine needs a curated source list that can produce mea
 **Tradeoffs Accepted:**
 - Static list requires manual curation as outlets change editorial character over time
 - 5 sources per orientation means a single dead feed shifts the balance
-- Current right-leaning sources are mostly Tier 3, which means full-spectrum corroboration (left + center + right) is partially discounted by the reliability caps
+- Current right-leaning sources are mostly Tier 3, which means full-spectrum corroboration (left + center + right) earns the maximum orientation bonus but the cluster scores will not exceed the client-side reliability caps unless Tier-1/2 sources are also present
 
 **Implementation:**
 `config/front_page_sources.json`. 15 entries with `name`, `url`, `orientation`, `reliability_tier` fields only.
@@ -740,7 +740,7 @@ The analyst's value question for consensus scans is temporal: "Is this story gro
 Every scan creates a permanent snapshot identified by a unique `scan_id`. The UI exposes an archive browser. The analyst can compare any two snapshots.
 
 **Reason:**
-The editorial consensus captured at 8:00 AM and 2:00 PM on the same day may show a story rising from SECTION to FRONT_PAGE tier, or a story that was FRONT_PAGE in the morning dropping off entirely by afternoon. This temporal pattern is itself intelligence.
+The editorial consensus captured at 8:00 AM and 2:00 PM on the same day may show a story rising from `monitored` to `confirmed` tier, or a story that was `confirmed` in the morning dropping off entirely by afternoon. This temporal pattern is itself intelligence.
 
 **Outcome:** *(confirmed)* Archive browser implemented and functional. Snapshots accumulate indefinitely.
 
@@ -819,7 +819,7 @@ These entities are high-frequency precisely because they are central to most pol
 A naive count-based consensus score (5 sources = high consensus) fails because it does not account for whether those 5 sources represent genuine cross-spectrum agreement or just 5 outlets from the same partisan orientation.
 
 **Decision:**
-Multi-factor scoring combining: raw source count (baseline), orientation spread bonus, Tier-1 presence bonus, and reliability caps.
+Multi-factor scoring combining: source breadth as baseline, orientation spread bonus, and Tier-1 presence bonus.
 
 **Reason:**
 Three Fox News affiliates and two Daily Wire-adjacent outlets covering the same story is not cross-spectrum consensus — it is one editorial ecosystem amplifying a story. Genuine consensus requires corroboration across orientation lines. The multi-factor model distinguishes between these cases.
@@ -841,19 +841,27 @@ Three Fox News affiliates and two Daily Wire-adjacent outlets covering the same 
 The value of a consensus signal comes from its cross-spectrum nature. A story covered by AP + CNN + NYT (all center/left) is less certain than a story covered by AP + NYT + Fox News (center + left + right).
 
 **Decision:**
-Orientation bonuses in consensus scoring:
+Orientation bonuses in `front_page_consensus.py::_score_consensus()` (Python):
 - left + center + right all present: +0.30
-- any two orientations present: +0.15
+- (left + center) or (center + right): +0.15
+- left + right without center: +0.05
+- single orientation only: no bonus
+
+Orientation bonuses in `RadarDashboard.jsx::scoreCluster()` (JavaScript, for client-side live-feed clustering):
+- left + center + right all present: +0.20
+- center + one of left/right: +0.10
+- left + right without center: no bonus
 - single orientation only: no bonus
 
 **Reason:**
 When outlets with fundamentally different editorial agendas and audiences all choose to lead with the same story, that convergence is the strongest available editorial consensus signal. The bonus is proportional to the degree of spectrum coverage achieved.
 
 **Tradeoffs Accepted:**
-- Left + right without center receives no bonus, because this pattern more often reflects contested framing than genuine factual consensus — both sides are leading with the story but potentially for opposite editorial reasons
+- Left + right without center receives a minimal bonus (+0.05) in the Python engine rather than the same as center-inclusive pairs, because this pattern more often reflects contested framing than genuine factual consensus. The JS client-side scorer gives left+right without center no bonus at all.
+- The two systems use different bonus magnitudes because they operate on different scales and source sets
 
 **Implementation:**
-`RadarDashboard.jsx::scoreCluster()` and `front_page_consensus.py::_score_consensus()`. Both implement the same orientation logic independently for their respective use cases.
+`RadarDashboard.jsx::scoreCluster()` and `front_page_consensus.py::_score_consensus()`. Both implement orientation spread logic but with different magnitude values.
 
 **Outcome:** *(confirmed)* Full-spectrum corroboration events are rare and score substantially higher than single-orientation coverage.
 
@@ -872,17 +880,19 @@ When outlets with fundamentally different editorial agendas and audiences all ch
 Without reliability caps, a story covered by five Reddit communities or five state-narrative outlets could technically achieve a high consensus score based on volume, despite having no verified wire-service corroboration.
 
 **Decision:**
-- All Tier-4 (watchlist/social) sources: consensus score capped at 0.35 (never reaches SECTION tier)
-- All Tier-3+ (no Tier-1 or Tier-2): consensus score capped at 0.55 (never reaches FRONT_PAGE tier)
+- All Tier-4 (watchlist/social) sources: score capped at 0.59 (never reaches `front_page` tier)
+- All Tier-3+ (no Tier-1 or Tier-2): score capped at 0.79 (never reaches `front_page` tier)
 - Applied after all bonuses are computed
 
 **Reason:**
 Social and watchlist sources generate real signal about public attention and narrative, but their editorial confidence ceiling is fundamentally lower than established reporting. The caps prevent social amplification from masquerading as editorial consensus.
 
 **Implementation:**
-`front_page_consensus.py::_score_consensus()`: caps applied after orientation and tier bonuses. `RadarDashboard.jsx::scoreCluster()`: `allTier4` and `allLowReliability` caps applied after corroboration bonuses.
+Currently implemented only in `RadarDashboard.jsx::scoreCluster()` (client-side live-feed clustering). The reliability caps were removed from `front_page_consensus.py::_score_consensus()` — the Python consensus engine no longer applies them. The consensus engine's tier thresholds (`confirmed`/`elevated`/`monitored`/`noise`) provide sufficient differentiation at the current source count of 15.
 
-**Outcome:** *(confirmed)* Watchlist-heavy clusters are correctly capped below front-page tier regardless of volume.
+`RadarDashboard.jsx`: `allTier4` (all signals ≥ Tier 4) caps at 0.59; `allLowReliability` (all signals ≥ Tier 3) caps at 0.79.
+
+**Outcome:** *(confirmed)* Watchlist-heavy clusters are correctly capped below front-page tier in client-side clustering regardless of volume. The Python consensus engine achieves similar differentiation through its tier-bonus structure.
 
 **Related Files:** `tasks/front_page_consensus.py`, `frontend/src/pages/RadarDashboard.jsx`
 
@@ -975,7 +985,7 @@ Consensus score was computed as `source_count / total_sources` — purely based 
 Volume without quality produced misleading results. A story covered by five Tier-3 right-oriented outlets (e.g., five Daily Wire-adjacent sites) would outscore a story covered by AP + BBC + NPR — three Tier-1/2 center sources with high editorial independence. Partisan amplification within one editorial ecosystem was scoring higher than genuine cross-spectrum corroboration. This was precisely backwards from what "editorial consensus" means.
 
 **What Replaced It:**
-Multi-factor consensus scoring (D-020) with orientation spread bonuses (D-021) and reliability caps (D-022). Source count remains the baseline, but orientation diversity and tier quality determine whether a cluster can reach front-page tier.
+Multi-factor consensus scoring (D-020) with orientation spread bonuses (D-021). Source count remains the baseline (`min(source_count/10, 1.0) × 0.40`), but orientation diversity and tier quality determine the final score.
 
 **Lesson:**
 Source count measures volume. Editorial consensus measures independence-weighted convergence. These are different things. Optimizing for count alone rewards echo chambers.

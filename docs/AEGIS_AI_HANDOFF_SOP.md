@@ -58,7 +58,7 @@ The system is deliberately designed around **constitutional watchdog** prioritie
 - Not cloud-hosted (all data is local; Ollama runs locally)
 - Not a full NLP pipeline (LLM calls are per-item, not cross-corpus)
 - Not a censorship tool (it uses source weighting for confidence, not suppression)
-- Not the same as a traditional market/financial analyzer (despite the repo folder name `market-analyzer`)
+- Not a market or financial analyzer
 
 ---
 
@@ -274,18 +274,18 @@ This is a large, multi-state component. Key state variables:
 
 | State | Purpose |
 |-------|---------|
-| `signals` | All fetched items from the backend |
-| `view` | Current dashboard tab: `"live"` \| `"library"` \| `"consensus"` \| `"archive"` |
-| `sortBy` | Current sort: `"time"` \| `"significance"` \| `"public_interest"` |
-| `clustered` | Whether to show clustered or flat list view |
-| `consensusResults` | Latest consensus scan data |
-| `archiveSnapshots` | List of historical consensus scan IDs |
-| `archiveDetail` | Expanded snapshot for the archive view |
-| `scanState` / `searchScanState` / `consensusScanState` | Live scan progress polled every 2s |
+| `items` | All signals fetched from the backend for the current view |
+| `activeView` | Current dashboard tab: `"live"` \| `"library"` \| `"consensus"` \| `"archive"` |
+| `sortMode` | Current sort: `"significance"` \| `"recency"` |
+| `showFiltered` | Whether to include noise/filtered items |
+| `consensusData` | Latest consensus scan cluster results |
+| `consensusArchive` | List of all historical scan snapshots |
+| `selectedScanId` | Which archive snapshot is being viewed (null = latest) |
+| `scanning` / `keywordScanning` / `consensusScanning` | Per-scan-type in-progress flags, polled every 2.5s |
 
-**View routing logic:** The `view` state variable controls which content block renders. Adding a new view tab requires: (1) adding the tab button, (2) adding the render block, and (3) potentially adding new fetch calls. Missing the render block causes the tab to appear clickable but show nothing.
+**View routing logic:** The `activeView` state variable controls which content block renders. Adding a new view tab requires: (1) adding the tab button, (2) adding the render block, and (3) potentially adding new fetch calls. Missing the render block causes the tab to appear clickable but show nothing.
 
-**Clustering (client-side, Stage 8):** When `clustered = true`, signals are grouped by `clusterSignals()` (Union-Find on shared topic words), then each cluster is scored by `scoreCluster()` for front-page tier placement. The scoring respects source orientation, tier-1 presence, and keyword importance patterns.
+**Clustering (client-side):** Signals are grouped by `clusterSignals()` (Union-Find on shared topic words), then each cluster is scored by `scoreCluster()` for front-page tier placement. The scoring respects source orientation, tier-1 presence, and keyword importance patterns.
 
 **Quick Scan presets:** Seven preset buttons at the top (`PRESETS` array) each fire a keyword scan. Clicking them **adds items to the database** — they do not filter the existing view.
 
@@ -360,7 +360,7 @@ Fonts are loaded from Google Fonts (`@import` at top of file). In an offline/air
 
 ### Starting the Backend
 
-From the **project root** (`d:\ARC NEXUS LLC\market-analyzer`):
+From the **project root** (`d:\ARC NEXUS LLC\AEGIS`):
 
 ```powershell
 python main.py
@@ -459,7 +459,7 @@ Frontend runs at `http://127.0.0.1:5175`.
 2. `run_front_page_consensus()` fetches top 10 headlines per source from `config/front_page_sources.json`
 3. Headlines are clustered by event identity (Stage 12 algorithm — see `front_page_consensus.py` notes)
 4. Each cluster is scored for editorial consensus: how many sources covered it, what orientations are represented, whether Tier-1 wire services are present
-5. Consensus tier assigned: `FRONT_PAGE` (≥0.80), `MAJOR` (≥0.60), `SECTION` (≥0.40), `BACK PAGE` (≥0.20), `NOISE` (<0.20)
+5. Consensus tier assigned: `confirmed` (≥0.70), `elevated` (≥0.45), `monitored` (≥0.20), `noise` (<0.20)
 6. Results saved to `front_page_consensus` table with a UUID `scan_id` and timestamp
 7. Frontend displays the latest scan results
 
@@ -804,7 +804,7 @@ The current `title_norm` index handles dedup at intake. If the database grows be
 
 ### Front-Page Quality Tuning
 
-The consensus score thresholds (`FRONT_PAGE` at 0.80, etc.) and keyword boost lists are tuned for the current source set. Adding more sources or changing the curated 15 may require recalibrating boost weights and tier thresholds.
+The consensus score thresholds (`confirmed` at 0.70, `elevated` at 0.45, `monitored` at 0.20) and keyword boost lists are tuned for the current source set. Adding more sources or changing the curated 15 may require recalibrating boost weights and tier thresholds.
 
 ### Narrative Drift Detection
 

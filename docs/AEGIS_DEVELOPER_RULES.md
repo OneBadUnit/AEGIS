@@ -559,15 +559,18 @@ When in doubt: keep data local.
 
 ### Consistent Documentation Standards
 
-Every ARC NEXUS project should maintain:
+Every ARC NEXUS project should maintain the following documentation set:
 
 | Document | Contents |
 |----------|---------|
-| `AEGIS_STORAGE_AND_STRUCTURE.md` (or equivalent) | Architecture, data flow, database schema, design decisions |
-| `AEGIS_AI_HANDOFF_SOP.md` (or equivalent) | Operating procedures, sensitive areas, known bugs |
-| `AEGIS_DEVELOPER_RULES.md` (or equivalent) | This document — development standards |
+| `AEGIS_STORAGE_AND_STRUCTURE.md` (or equivalent) | Architecture, data flow, database schema, design decisions, failed approaches |
+| `AEGIS_AI_HANDOFF_SOP.md` (or equivalent) | Operating procedures, file map, sensitive areas, known bugs, AI collaboration rules |
+| `AEGIS_DEVELOPER_RULES.md` (or equivalent) | Development standards, philosophy, git rules, ARC NEXUS standards |
+| `AEGIS_DECISION_LOG.md` (or equivalent) | Permanent record of why major decisions were made and what failed |
+| `AEGIS_RECOVERY_AND_SETUP.md` (or equivalent) | Startup/shutdown procedures, recovery steps, port configuration, failure modes |
+| `AEGIS_USER_INSTALL_GUIDE.md` (or equivalent) | End-user install guide: prerequisites, step-by-step setup, verification |
 
-Future projects may adapt the naming, but the three-document structure (architecture, SOP, rules) should be preserved. These documents exist so that any AI assistant, at any future date, can onboard to the project in minutes rather than hours.
+Future projects may adapt the naming, but the six-document structure should be preserved. These documents exist so that any AI assistant or developer, at any future date, can onboard to the project in minutes rather than hours.
 
 ### Naming Conventions
 

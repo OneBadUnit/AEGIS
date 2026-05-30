@@ -28,7 +28,7 @@
 ## 1. Project Structure
 
 ```
-d:\ARC NEXUS LLC\market-analyzer\        ← Project root (CWD for all runtime calls)
+d:\ARC NEXUS LLC\AEGIS\        ← Project root (CWD for all runtime calls)
 │
 ├── main.py                               Runtime entry point — starts uvicorn on port 8002
 ├── models.py                             Pydantic models: RawPost, SignalAnalysis, SignalItem
@@ -86,7 +86,11 @@ d:\ARC NEXUS LLC\market-analyzer\        ← Project root (CWD for all runtime c
 │
 ├── docs/                                 Documentation (not loaded at runtime)
 │   ├── AEGIS_AI_HANDOFF_SOP.md
-│   └── AEGIS_STORAGE_AND_STRUCTURE.md   ← this file
+│   ├── AEGIS_DECISION_LOG.md
+│   ├── AEGIS_DEVELOPER_RULES.md
+│   ├── AEGIS_RECOVERY_AND_SETUP.md
+│   ├── AEGIS_STORAGE_AND_STRUCTURE.md   ← this file
+│   └── AEGIS_USER_INSTALL_GUIDE.md
 │
 ├── market_radar.db                       SQLite database (runtime data, not committed to git)
 │
@@ -159,7 +163,7 @@ radar.py::POST /consensus-scan
         │     └── _should_merge() → 2+ shared event words OR 1 anchor + same domain
         ├── _deduplicate_group() → max 1 article per outlet, tier-1 first
         ├── _score_consensus() → float 0.0–1.0
-        ├── _consensus_tier() → "front_page" | "major" | "section" | "back_page" | "noise"
+        ├── _consensus_tier() → "confirmed" | "elevated" | "monitored" | "noise"
         └── database.py::insert_consensus()
 ```
 
@@ -355,27 +359,23 @@ radar.py::POST /consensus-scan
 5. CONSENSUS SCORING
    _score_consensus(deduped_group)
    
-   base_score = source_count × 0.10 (raw count, capped at 0.50)
+   source_breadth = min(source_count / 10, 1.0) × 0.40
    
    orientation bonuses:
      left + center + right all present: +0.30 (full spectrum consensus)
-     any two present: +0.15
+     (left + center) or (center + right): +0.15
+     left + right without center: +0.05
      only one orientation: no bonus
    
    tier bonuses:
-     2+ Tier-1 sources: +0.20
-     1 Tier-1 source: +0.10
-   
-   reliability caps:
-     all Tier-4 (watchlist/social): score capped at 0.35
-     all Tier-3+: score capped at 0.55
+     3+ Tier-1 sources: +0.20
+     1–2 Tier-1 sources: +0.10
    
    consensus_tier:
-     ≥ 0.70 → "front_page"
-     ≥ 0.50 → "major"
-     ≥ 0.30 → "section"
-     ≥ 0.10 → "back_page"
-     < 0.10 → "noise" (discarded, not stored)
+     ≥ 0.70 → "confirmed"
+     ≥ 0.45 → "elevated"
+     ≥ 0.20 → "monitored"
+     < 0.20 → "noise" (discarded, not stored)
 
 6. STORAGE
    Top 10 clusters by consensus_score saved to front_page_consensus table
@@ -615,7 +615,7 @@ Stores results from Front Page Consensus scans. Each scan writes a batch of rows
 | `right_count` | INTEGER | 0 | Number of right-orientation sources |
 | `tier1_count` | INTEGER | 0 | Number of Tier-1 (wire service) sources |
 | `consensus_score` | REAL | 0.0 | Composite editorial consensus score (0.0–1.0) |
-| `consensus_tier` | TEXT | `''` | front_page \| major \| section \| back_page \| noise |
+| `consensus_tier` | TEXT | `''` | confirmed \| elevated \| monitored \| noise |
 | `created_at` | TIMESTAMP | CURRENT_TIMESTAMP | Scan timestamp |
 
 #### Indexes
@@ -1025,7 +1025,7 @@ The services are independent but have a logical dependency order:
    ollama pull qwen2.5:7b ← first-time model download only
 
 2. Backend (must start before frontend makes API calls)
-   cd d:\ARC NEXUS LLC\market-analyzer
+   cd d:\ARC NEXUS LLC\AEGIS
    python main.py        ← starts FastAPI on port 8002
 
 3. Frontend (can start in any order, but API calls fail until backend is up)
@@ -1290,7 +1290,7 @@ With 50+ feeds contributing up to 25 items each (1,250 potential items), and a p
 
 **Failure:** A story covered by 5 Daily Wire sister sites (all Tier-3 right) would outscore a story covered by AP + BBC + NPR (Tier-1/2 center). Quantity without quality produced misleading consensus signals.
 
-**Replaced by:** Multi-factor consensus score: raw count as baseline, orientation spread bonus (left+center+right: +0.30), tier-1 presence bonus (+0.10/+0.20), reliability caps (all-Tier-4: max 0.35, all Tier-3+: max 0.55).
+**Replaced by:** Multi-factor consensus score: source breadth as baseline (`min(source_count/10, 1.0) × 0.40`), orientation spread bonus (left+center+right: +0.30), tier-1 presence bonus (+0.10/+0.20). Note: reliability caps were removed from the Python consensus engine but remain in the client-side `scoreCluster()` in `RadarDashboard.jsx`.
 
 ---
 
