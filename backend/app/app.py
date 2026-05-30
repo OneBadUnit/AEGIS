@@ -8,7 +8,7 @@ from backend.app.api.routes.radar import router as radar_router
 
 def create_app() -> FastAPI:
     app = FastAPI(
-        title="SWAT Signal Desk API",
+        title="AEGIS API",
         version="1.0.0",
     )
 
@@ -17,6 +17,8 @@ def create_app() -> FastAPI:
         allow_origins=[
             "http://127.0.0.1:5175",
             "http://localhost:5175",
+            "http://localhost:3000",
+            "http://127.0.0.1:3000",
         ],
         allow_credentials=True,
         allow_methods=["*"],

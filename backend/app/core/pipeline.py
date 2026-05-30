@@ -1,5 +1,5 @@
 # ==========================================
-# SWAT SIGNAL DESK / AEGIS
+# AEGIS
 # File: backend/app/core/pipeline.py
 # Phase: 2A (Intelligence Layer — Scoring Pass)
 # Version: 004

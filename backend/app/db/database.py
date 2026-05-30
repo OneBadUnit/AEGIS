@@ -1,5 +1,5 @@
 # ==========================================
-# SWAT SIGNAL DESK
+# AEGIS
 # File: backend/app/db/database.py
 # Phase: 1B (Keyword Search + Simple Clustering)
 # Version: 004

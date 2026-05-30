@@ -1,5 +1,5 @@
 ﻿# ==========================================
-# SWAT SIGNAL DESK / AEGIS
+# AEGIS
 # File: tasks/front_page_consensus.py
 # Phase: Stage 12 (Event Identity Refinement)
 # ==========================================

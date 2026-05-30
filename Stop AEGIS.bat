@@ -1,5 +1,5 @@
 @echo off
-echo Stopping ARC-NEXUS Market Radar...
+echo Stopping AEGIS...
 
 rem Kill backend listener only (port 8002)
 for /f "tokens=5" %%a in ('netstat -ano ^| findstr ":8002" ^| findstr "LISTENING"') do (

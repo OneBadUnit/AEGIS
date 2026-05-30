@@ -1,5 +1,5 @@
 # ==========================================
-# SWAT SIGNAL DESK
+# AEGIS
 # File: collector_runner.py
 # Phase: 1A (Rename + Reframe)
 # Version: 002
@@ -11,7 +11,7 @@ from tasks.run_collectors import run_all_collectors
 def main():
     print("")
     print("===================================")
-    print(" SWAT SIGNAL DESK — COLLECTOR")
+    print(" AEGIS — COLLECTOR")
     print("===================================")
     print("")
 

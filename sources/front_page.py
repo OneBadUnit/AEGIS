@@ -1,5 +1,5 @@
 # ==========================================
-# SWAT SIGNAL DESK / AEGIS
+# AEGIS
 # File: sources/front_page.py
 # Phase: Stage 11 (Front Page Editorial Consensus Engine)
 # ==========================================

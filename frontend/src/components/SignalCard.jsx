@@ -1,5 +1,5 @@
 // ==========================================
-// SWAT SIGNAL DESK / AEGIS
+// AEGIS
 // File: frontend/src/components/SignalCard.jsx
 // Phase: 2A (Intelligence Layer — Scoring Visibility)
 // Version: 003

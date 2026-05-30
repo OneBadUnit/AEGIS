@@ -1,5 +1,5 @@
 # ==========================================
-# SWAT SIGNAL DESK / AEGIS
+# AEGIS
 # File: tasks/run_collectors.py
 # Phase: 5A (Smart Intake Prioritization)
 # Version: 003
@@ -275,7 +275,7 @@ def run_all_collectors():
 
     safe_print("")
     safe_print("==============================")
-    safe_print(" SWAT SIGNAL DESK — PHASE 1A SCAN")
+    safe_print(" AEGIS — PHASE 1A SCAN")
     safe_print("==============================")
     safe_print("")
 
@@ -427,7 +427,7 @@ def run_keyword_scan(query: str):
 
     safe_print("")
     safe_print("==============================")
-    safe_print(" SWAT SIGNAL DESK — KEYWORD SCAN")
+    safe_print(" AEGIS — KEYWORD SCAN")
     safe_print("==============================")
     safe_print(f" Query : {query}")
     safe_print(f" Terms : {terms}")

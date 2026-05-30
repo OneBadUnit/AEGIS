@@ -1,5 +1,5 @@
 # ==========================================
-# SWAT SIGNAL DESK
+# AEGIS
 # File: ai/analyzer.py
 # Phase: 1A (Rename + Reframe)
 # Version: 003

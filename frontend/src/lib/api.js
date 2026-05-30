@@ -1,5 +1,5 @@
 // ==========================================
-// SWAT SIGNAL DESK
+// AEGIS
 // File: frontend/src/lib/api.js
 // Phase: 1B (Keyword Search + Simple Clustering)
 // Version: 003

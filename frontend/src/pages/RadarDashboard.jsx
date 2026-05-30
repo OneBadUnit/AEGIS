@@ -1,5 +1,5 @@
 ﻿// ==========================================
-// SWAT SIGNAL DESK / AEGIS
+// AEGIS
 // File: frontend/src/pages/RadarDashboard.jsx
 // Phase: 1C (UX Correction — Scan / Sort Separation)
 // Version: 005
